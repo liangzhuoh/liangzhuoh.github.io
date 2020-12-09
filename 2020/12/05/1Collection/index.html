@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Thymeleaf基本语法 | Kayson Zom</title>
+  <title>Collections基础使用 | Kayson Zom</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="ThymeleafSpring Boot 可以结合 Thymeleaf 模版来整合 HTML，使用原生的 HTML 作为视图。 Thymeleaf 模版是面向 Web 和独立环境的 Java 模版引擎，能够处理 HTML、XML、JavaScript、CSS 等。  头部添加 pom.xml引入依赖 application.yml配置  1&lt;p th:text&#x3D;&quot;$&amp;#123;me">
+  <meta name="description" content="Collections List  ArrayList长度不受限制实现：当不够用，则将本数组拷贝到另外一个新数组，新数组的长度为：原数组长度+原数组长度的一半 123456789101112131415Collection&lt;String&gt; c &#x3D; new ArrayList&lt;&gt;();List&lt;String&gt; c &#x3D; new ArrayList&lt;&gt;()">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thymeleaf基本语法">
-<meta property="og:url" content="http://example.com/2020/12/05/Thymeleaf/index.html">
+<meta property="og:title" content="Collections基础使用">
+<meta property="og:url" content="http://example.com/2020/12/05/1Collection/index.html">
 <meta property="og:site_name" content="Kayson Zom">
-<meta property="og:description" content="ThymeleafSpring Boot 可以结合 Thymeleaf 模版来整合 HTML，使用原生的 HTML 作为视图。 Thymeleaf 模版是面向 Web 和独立环境的 Java 模版引擎，能够处理 HTML、XML、JavaScript、CSS 等。  头部添加 pom.xml引入依赖 application.yml配置  1&lt;p th:text&#x3D;&quot;$&amp;#123;me">
+<meta property="og:description" content="Collections List  ArrayList长度不受限制实现：当不够用，则将本数组拷贝到另外一个新数组，新数组的长度为：原数组长度+原数组长度的一半 123456789101112131415Collection&lt;String&gt; c &#x3D; new ArrayList&lt;&gt;();List&lt;String&gt; c &#x3D; new ArrayList&lt;&gt;()">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-05T04:03:00.000Z">
-<meta property="article:modified_time" content="2020-12-04T07:16:36.583Z">
+<meta property="article:published_time" content="2020-12-05T00:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-04T06:53:35.369Z">
 <meta property="article:author" content="Kayson Liang">
-<meta property="article:tag" content="thymeleaf">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kayson Zom" type="application/atom+xml">
@@ -192,14 +192,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Thymeleaf" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-1Collection" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Thymeleaf基本语法
+      Collections基础使用
     </h1>
   
 
@@ -211,8 +211,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/12/05/Thymeleaf/" class="archive-article-date">
-        <time datetime="2020-12-05T04:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
+<a href="/2020/12/05/1Collection/" class="archive-article-date">
+        <time datetime="2020-12-05T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
 </a>
 
   
@@ -221,121 +221,82 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="Thymeleaf"><a href="#Thymeleaf" class="headerlink" title="Thymeleaf"></a>Thymeleaf</h1><p>Spring Boot 可以结合 Thymeleaf 模版来整合 HTML，使用原生的 HTML 作为视图。</p>
-<p>Thymeleaf 模版是面向 Web 和独立环境的 Java 模版引擎，能够处理 HTML、XML、JavaScript、CSS 等。</p>
-<ol>
-<li>头部添加<html lang="en" xmlns:th="http://www.thymeleaf.org"></li>
-<li>pom.xml引入依赖</li>
-<li>application.yml配置</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;message&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="第一步：pom-xml中添加依赖"><a href="#第一步：pom-xml中添加依赖" class="headerlink" title="第一步：pom.xml中添加依赖"></a>第一步：pom.xml中添加依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 继承父包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.7.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- web启动jar --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+    <h4 id="Collections"><a href="#Collections" class="headerlink" title="Collections"></a>Collections</h4><ul>
+<li>List</li>
+</ul>
+<p>ArrayList长度不受限制实现：当不够用，则将本数组拷贝到另外一个新数组，新数组的长度为：原数组长度+原数组长度的一半</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//两种写法都可以，因为List继承了Collection</span></span><br><span class="line">		System.out.println(c.size()); <span class="comment">//集合长度</span></span><br><span class="line">		System.out.println(c.isEmpty()); <span class="comment">//集合是否为空</span></span><br><span class="line">		c.add(<span class="string">&quot;CHINA&quot;</span>); <span class="comment">//集合中添加元素</span></span><br><span class="line">		c.add(<span class="string">&quot;Englend&quot;</span>);</span><br><span class="line">		c.add(<span class="string">&quot;c&quot;</span>);</span><br><span class="line">		c.add(<span class="string">&quot;d&quot;</span>);</span><br><span class="line">	<span class="comment">//	c.remove(&quot;Englend&quot;); //删除元素</span></span><br><span class="line">	<span class="comment">//	c.clear(); //清空所有元素</span></span><br><span class="line">		c.toArray();<span class="comment">//转换为数组</span></span><br><span class="line">		c.add(<span class="number">2</span>,<span class="string">&quot;巧碧螺&quot;</span>);<span class="comment">//在索引为2的位置插入</span></span><br><span class="line">		c.set(<span class="number">2</span>,<span class="string">&quot;巧碧螺&quot;</span>);<span class="comment">//将索引为2的元素替换</span></span><br><span class="line">		System.out.println(list.indexOf(<span class="string">&quot;d&quot;</span>));<span class="comment">//从头开始找，元素的索引</span></span><br><span class="line">		System.out.println(c.contains(<span class="string">&quot;CHINA&quot;</span>)); <span class="comment">//是否包含某个对象</span></span><br></pre></td></tr></table></figure>
 
 <a id="more"></a>
 
-<h4 id="第二步：配置application-yml"><a href="#第二步：配置application-yml" class="headerlink" title="第二步：配置application.yml"></a>第二步：配置application.yml</h4><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">9090</span></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">thymeleaf:</span></span><br><span class="line">    <span class="attr">prefix:</span> <span class="string">classpath:/templates/</span></span><br><span class="line">    <span class="attr">suffix:</span> <span class="string">.html</span></span><br><span class="line">    <span class="attr">mode:</span> <span class="string">HTML5</span></span><br><span class="line">    <span class="attr">encoding:</span> <span class="string">UTF-8</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="第三步：HTML配置头部"><a href="#第三步：HTML配置头部" class="headerlink" title="第三步：HTML配置头部"></a>第三步：HTML配置头部</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span> <span class="attr">xmlns:th</span>=<span class="string">&quot;http://www.thymeleaf.org&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>配置完毕即可使用</p>
-<h3 id="Thymeleaf-常用语法"><a href="#Thymeleaf-常用语法" class="headerlink" title="Thymeleaf 常用语法"></a>Thymeleaf 常用语法</h3><ul>
-<li>赋值、拼接</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/index2&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index2</span><span class="params">(Map&lt;String,String&gt; map)</span></span>&#123;</span><br><span class="line">  map.put(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;张三&quot;</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&quot;index&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;name&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;&#x27;学生姓名是&#x27;+$&#123;name&#125;+2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;|学生姓名是,$&#123;name&#125;|&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
 <ul>
-<li>条件判断：if/unless</li>
+<li>Map</li>
 </ul>
-<p>th:if 表示条件成立时显示内容，th:unless 表示条件不成立时显示内容</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/if&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index3</span><span class="params">(Map&lt;String,Boolean&gt; map)</span></span>&#123;</span><br><span class="line">    map.put(<span class="string">&quot;flag&quot;</span>,<span class="keyword">true</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;index&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>键值对进行存储。Map中的键值不能重复，否则会覆盖原数据。</p>
+<ol>
+<li>简单用法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer,String&gt; m1 = <span class="keyword">new</span> HashMap&lt;Integer, String&gt;();</span><br><span class="line">Map&lt;Integer, String&gt; m2 = <span class="keyword">new</span> HashMap&lt;Integer, String&gt;();</span><br><span class="line">		m2.put(<span class="number">4</span>, <span class="string">&quot;四&quot;</span>);</span><br><span class="line">		m2.put(<span class="number">5</span>, <span class="string">&quot;五&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		m1.put(<span class="number">1</span>,<span class="string">&quot;one&quot;</span>); <span class="comment">//插入一个元素</span></span><br><span class="line">		m1.put(<span class="number">2</span>,<span class="string">&quot;two&quot;</span>);</span><br><span class="line">		m1.put(<span class="number">3</span>,<span class="string">&quot;three&quot;</span>);</span><br><span class="line"></span><br><span class="line">		m1.putAll(m2);<span class="comment">//插入一个Map中的所有元素</span></span><br><span class="line">		</span><br><span class="line">		System.out.println(m1.get(<span class="number">1</span>));<span class="comment">//根据键值得到元素值</span></span><br><span class="line">		System.out.println(m1.containsKey(<span class="number">1</span>));<span class="comment">//判断是否包含某个键</span></span><br><span class="line">		System.out.println(m1.containsValue(<span class="string">&quot;one&quot;</span>));<span class="comment">//判断是否包含某个值</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:if</span>=<span class="string">&quot;$&#123;flag == true&#125;&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;if判断成立&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:unless</span>=<span class="string">&quot;$&#123;flag != true&#125;&quot;</span> <span class="attr">th:text</span>=<span class="string">&quot;unless判断成立&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>循环</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/index&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;index...&quot;</span>);</span><br><span class="line">    List&lt;Student&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    list.add(<span class="keyword">new</span> Student(<span class="number">1L</span>,<span class="string">&quot;张三&quot;</span>,<span class="number">22</span>));</span><br><span class="line">    list.add(<span class="keyword">new</span> Student(<span class="number">2L</span>,<span class="string">&quot;李四&quot;</span>,<span class="number">23</span>));</span><br><span class="line">    list.add(<span class="keyword">new</span> Student(<span class="number">3L</span>,<span class="string">&quot;王五&quot;</span>,<span class="number">24</span>));</span><br><span class="line">    model.addAttribute(<span class="string">&quot;list&quot;</span>,list);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;index&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>index<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>count<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生ID<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span>=<span class="string">&quot;student,stat:$&#123;list&#125;&quot;</span> <span class="attr">th:style</span>=<span class="string">&quot;&#x27;background-color:&#x27;+@&#123;$&#123;stat.odd&#125;?&#x27;#F2F2F2&#x27;&#125;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;stat.index&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;stat.count&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;student.id&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;student.name&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">td</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;student.age&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>stat 是状态变量，属性：</p>
-<ul>
-<li>index 集合中元素的index（从0开始）</li>
-<li>count 集合中元素的count（从1开始）</li>
-<li>size 集合的大小</li>
-<li>current 当前迭代变量</li>
-<li>even/odd 当前迭代是否为偶数/奇数（从0开始计算）</li>
-<li>first 当前迭代的元素是否是第一个</li>
-<li>last 当前迭代的元素是否是最后一个</li>
-</ul>
-<ul>
-<li>URL</li>
-</ul>
-<p>Thymeleaf 对于 URL 的处理是通过 <code>@&#123;...&#125;</code> 进行处理，结合 th:href 、th:src</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello World<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">&quot;@&#123;http://www.baidu.com&#125;&quot;</span>&gt;</span>跳转<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">th:href</span>=<span class="string">&quot;@&#123;http://localhost:9090/index/url/&#123;na&#125;(na=$&#123;name&#125;)&#125;&quot;</span>&gt;</span>跳转2<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">th:src</span>=<span class="string">&quot;$&#123;src&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:style</span>=<span class="string">&quot;&#x27;background:url(&#x27;+ @&#123;$&#123;src&#125;&#125; +&#x27;);&#x27;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>三元运算</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/eq&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">eq</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">    model.addAttribute(<span class="string">&quot;age&quot;</span>,<span class="number">30</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;test&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">th:value</span>=<span class="string">&quot;$&#123;age gt 30?&#x27;中年&#x27;:&#x27;青年&#x27;&#125;&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>gt great than 大于</li>
-<li>ge great equal 大于等于</li>
-<li>eq equal 等于</li>
-<li>lt less than 小于</li>
-<li>le less equal 小于等于</li>
-<li>ne not equal 不等于</li>
-</ul>
-<ul>
-<li>switch</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/switch&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">switchTest</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">    model.addAttribute(<span class="string">&quot;gender&quot;</span>,<span class="string">&quot;女&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;test&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">th:switch</span>=<span class="string">&quot;$&#123;gender&#125;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:case</span>=<span class="string">&quot;女&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:case</span>=<span class="string">&quot;男&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:case</span>=<span class="string">&quot;*&quot;</span>&gt;</span>未知<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>map传递对象示例</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestMap2</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Employee e1 = <span class="keyword">new</span> Employee(<span class="number">1001</span>, <span class="string">&quot;老鼠1&quot;</span>, <span class="number">60000</span>);</span><br><span class="line">		Employee e2 = <span class="keyword">new</span> Employee(<span class="number">1002</span>, <span class="string">&quot;老鼠2&quot;</span>, <span class="number">50000</span>);</span><br><span class="line">		Employee e3 = <span class="keyword">new</span> Employee(<span class="number">1003</span>, <span class="string">&quot;老鼠3&quot;</span>, <span class="number">40000</span>);</span><br><span class="line">		</span><br><span class="line">		Map&lt;Integer, Employee&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Employee&gt;();</span><br><span class="line">		map.put(<span class="number">1001</span>, e1);</span><br><span class="line">		map.put(<span class="number">1002</span>, e2);</span><br><span class="line">		map.put(<span class="number">1003</span>, e3);</span><br><span class="line">		Employee employee = map.get(<span class="number">1002</span>);</span><br><span class="line">		System.out.println(employee.getEname());</span><br><span class="line">		System.out.println(map);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">private</span> String ename;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">double</span> salary;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Employee</span><span class="params">(<span class="keyword">int</span> id,String ename,<span class="keyword">double</span> salary)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>();</span><br><span class="line">		<span class="keyword">this</span>.id = id;</span><br><span class="line">		<span class="keyword">this</span>.ename = ename;</span><br><span class="line">		<span class="keyword">this</span>.salary = salary;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> id;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getEname</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> ename;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">getSalary</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> salary;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <ul>
-<li>基本对象<ul>
-<li><code>#ctx</code> ：上下文对象</li>
-<li><code>#vars</code>：上下文变量</li>
-<li><code>#locale</code>：区域对象</li>
-<li><code>#request</code>：HttpServletRequest 对象</li>
-<li><code>#response</code>：HttpServletResponse 对象</li>
-<li><code>#session</code>：HttpSession 对象</li>
-<li><code>#servletContext</code>：ServletContext 对象</li>
+<li>set</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/object&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">object</span><span class="params">(HttpServletRequest request)</span></span>&#123;</span><br><span class="line">    request.setAttribute(<span class="string">&quot;request&quot;</span>,<span class="string">&quot;request对象&quot;</span>);</span><br><span class="line">    request.getSession().setAttribute(<span class="string">&quot;session&quot;</span>,<span class="string">&quot;session对象&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;test&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#request.getAttribute(&#x27;request&#x27;)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#session.getAttribute(&#x27;session&#x27;)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#locale.country&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>区别为：没有顺序，不可重复。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Set&lt;String&gt; set1 = <span class="keyword">new</span> HashSet&lt;String&gt;();</span><br><span class="line">		</span><br><span class="line">		set1.add(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line">		set1.add(<span class="string">&quot;bb&quot;</span>);</span><br><span class="line">		set1.add(<span class="string">&quot;aa&quot;</span>); <span class="comment">//输出只有aa bb</span></span><br></pre></td></tr></table></figure>
 
 
 
 <ul>
-<li>内嵌对象</li>
+<li>list/set遍历</li>
 </ul>
-<p>可以直接通过 # 访问。</p>
-<p>1、dates：java.util.Date 的功能方法</p>
-<p>2、calendars：java.util.Calendar 的功能方法</p>
-<p>3、numbers：格式化数字</p>
-<p>4、strings：java.lang.String 的功能方法</p>
-<p>5、objects：Object 的功能方法</p>
-<p>6、bools：对布尔求值的方法</p>
-<p>7、arrays：操作数组的功能方法</p>
-<p>8、lists：操作集合的功能方法</p>
-<p>9、sets：操作集合的功能方法</p>
-<p>10、maps：操作集合的功能方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(&quot;/util&quot;)</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">util</span><span class="params">(Model model)</span></span>&#123;</span><br><span class="line">    model.addAttribute(<span class="string">&quot;name&quot;</span>,<span class="string">&quot;zhangsan&quot;</span>);</span><br><span class="line">    model.addAttribute(<span class="string">&quot;users&quot;</span>,<span class="keyword">new</span> ArrayList&lt;&gt;());</span><br><span class="line">    model.addAttribute(<span class="string">&quot;count&quot;</span>,<span class="number">22</span>);</span><br><span class="line">    model.addAttribute(<span class="string">&quot;date&quot;</span>,<span class="keyword">new</span> Date());</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;test&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">		list.add(<span class="string">&quot;aa&quot;</span>);</span><br><span class="line">		list.add(<span class="string">&quot;bb&quot;</span>);</span><br><span class="line">		list.add(<span class="string">&quot;cc&quot;</span>);</span><br><span class="line">		</span><br><span class="line"><span class="comment">//使用了Iterator迭代器</span></span><br><span class="line">		<span class="keyword">for</span>(Iterator&lt;String&gt; iter = list.iterator();iter.hasNext();) &#123;</span><br><span class="line">			String tempString = iter.next();</span><br><span class="line">			System.out.println(tempString);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;list.size();i++) &#123;</span><br><span class="line">    list.get(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 格式化时间 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#dates.format(date,&#x27;yyyy-MM-dd HH:mm:sss&#x27;)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 创建当前时间，精确到天 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#dates.createToday()&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 创建当前时间，精确到秒 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#dates.createNow()&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 判断是否为空 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#strings.isEmpty(name)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 判断List是否为空 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#lists.isEmpty(users)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 输出字符串长度 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#strings.length(name)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 拼接字符串 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#strings.concat(name,name,name)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 创建自定义字符串 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">&quot;$&#123;#strings.randomAlphanumeric(count)&#125;&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>map遍历</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;Integer,Man&gt; maps = <span class="keyword">new</span> HashMap&lt;Integer,Man&gt;();</span><br><span class="line">Set&lt;Integer&gt; keyset = maps.keySet();</span><br><span class="line"><span class="keyword">for</span>(Integer id:keySet)&#123;</span><br><span class="line">    System.out.println(maps.get(id).name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>Collections工具类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>Collections.shuffle(list); 随机排序</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>Collections.sort(list); 按照递增排序</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>Collections.reverse(list); 逆序排列</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span>Collections.binarySearch(list,<span class="string">&#x27;name&#x27;</span>); 二分查找</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h4><ul>
+<li>路径建议</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pathString = <span class="string">&quot;D:/EclipseWork/07-AOP&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>构建File对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String pathString = <span class="string">&quot;C:/Users/002/Desktop/mcd信息平台/leader页面图片/leader首页.png&quot;</span>;	</span><br><span class="line">		<span class="comment">//1.构建File对象</span></span><br><span class="line">		File srcFile = <span class="keyword">new</span> File(pathString);</span><br><span class="line">		System.out.println(srcFile.length());</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//2.构建File对象</span></span><br><span class="line">		File srcFile1 = <span class="keyword">new</span> File(<span class="string">&quot;C:/Users/002/Desktop/mcd信息平台/leader页面图片&quot;</span>,<span class="string">&quot;leader首页.png&quot;</span>);</span><br><span class="line">		System.out.println(srcFile1.length());</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>路径</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//相对路径,通常文件存储在项目中</span></span><br><span class="line">	srcFile1 = <span class="keyword">new</span> File(<span class="string">&quot;leader首页.png&quot;</span>);</span><br><span class="line"></span><br><span class="line">	System.out.println(<span class="string">&quot;名称:&quot;</span>+src.getName());</span><br><span class="line">	System.out.println(<span class="string">&quot;路径:&quot;</span>+src.getPath());</span><br><span class="line">	System.out.println(<span class="string">&quot;绝对路径:&quot;</span>+src.getAbsolutePath());</span><br><span class="line">	System.out.println(<span class="string">&quot;父路径:&quot;</span>+src.getPath());</span><br><span class="line">	System.out.println(<span class="string">&quot;是否存在:&quot;</span>+src.exists());</span><br><span class="line">	System.out.println(<span class="string">&quot;是否文件:&quot;</span>+src.isFile());</span><br><span class="line">	System.out.println(<span class="string">&quot;是否文件夹:&quot;</span>+src.isDirectory());</span><br><span class="line">	</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建文件</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">File src = <span class="keyword">new</span> File(<span class="string">&quot;C:/Users/002/Desktop/AA.text&quot;</span>);<span class="comment">//后缀则为文件类型</span></span><br><span class="line">src.createNewFile();<span class="comment">//创建文件</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 
 
     
@@ -351,7 +312,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2020/12/05/Thymeleaf/" title="Thymeleaf基本语法" target="_blank">http://example.com/2020/12/05/Thymeleaf/</a>
+          <a href="http://example.com/2020/12/05/1Collection/" title="Collections基础使用" target="_blank">http://example.com/2020/12/05/1Collection/</a>
         </li>
         
         <li>
@@ -373,7 +334,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">thymeleaf</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -429,7 +390,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/05/Thymeleaf/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/05/1Collection/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -444,18 +405,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/12/07/sql-left%20join/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/12/05/4Thymeleaf/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          sql中join连接
+          Thymeleaf基本语法
         
       </div>
     </a>
   
   
-    <a href="/2020/12/05/Collection/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Collections基础使用</div>
+    <a href="/2020/12/03/3Vue/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue基础语法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -482,7 +443,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Thymeleaf"><span class="toc-number">1.</span> <span class="toc-text">Thymeleaf</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9Apom-xml%E4%B8%AD%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">第一步：pom.xml中添加依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E9%85%8D%E7%BD%AEapplication-yml"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">第二步：配置application.yml</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9AHTML%E9%85%8D%E7%BD%AE%E5%A4%B4%E9%83%A8"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">第三步：HTML配置头部</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Thymeleaf-%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="toc-number">1.0.1.</span> <span class="toc-text">Thymeleaf 常用语法</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Collections"><span class="toc-number">1.</span> <span class="toc-text">Collections</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IO"><span class="toc-number">2.</span> <span class="toc-text">IO</span></a></li></ol>
                     </div>
                 </span>
             </div>

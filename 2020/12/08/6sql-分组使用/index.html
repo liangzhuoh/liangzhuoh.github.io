@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Vue基础语法 | Kayson Zom</title>
+  <title>sql 分组使用 | Kayson Zom</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="Class与Style绑定绑定HTML Class单值绑定 12&lt;div v-bind:class&#x3D;&quot;&amp;#123;active:isActive&amp;#125;&quot;&gt;&lt;&#x2F;div&gt;  123data:&amp;#123;    isActive:true&amp;#125;  数据对象绑定法 123&lt;div v-bind:class&#x3D;&quot;classObject&amp;q">
+  <meta name="description" content="一、ORDER BY根据指定列对数据进行分组 现有表格： carinfo    status number spend    正在车场 粤BS8120 10   已出车场 粤BS8120 15   已出车场 粤BS8120 20   正在车场 粤BS8121 25   已出车场 粤BS8121 30   已出车场 粤BS8121 35">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue基础语法">
-<meta property="og:url" content="http://example.com/2020/12/03/Vue/index.html">
+<meta property="og:title" content="sql 分组使用">
+<meta property="og:url" content="http://example.com/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="Kayson Zom">
-<meta property="og:description" content="Class与Style绑定绑定HTML Class单值绑定 12&lt;div v-bind:class&#x3D;&quot;&amp;#123;active:isActive&amp;#125;&quot;&gt;&lt;&#x2F;div&gt;  123data:&amp;#123;    isActive:true&amp;#125;  数据对象绑定法 123&lt;div v-bind:class&#x3D;&quot;classObject&amp;q">
+<meta property="og:description" content="一、ORDER BY根据指定列对数据进行分组 现有表格： carinfo    status number spend    正在车场 粤BS8120 10   已出车场 粤BS8120 15   已出车场 粤BS8120 20   正在车场 粤BS8121 25   已出车场 粤BS8121 30   已出车场 粤BS8121 35">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-03T14:00:00.000Z">
-<meta property="article:modified_time" content="2020-12-04T06:44:11.594Z">
+<meta property="article:published_time" content="2020-12-08T12:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-08T02:11:48.299Z">
 <meta property="article:author" content="Kayson Liang">
-<meta property="article:tag" content="vue">
+<meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kayson Zom" type="application/atom+xml">
@@ -192,14 +192,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Vue" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-6sql-分组使用" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Vue基础语法
+      sql 分组使用
     </h1>
   
 
@@ -211,8 +211,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/12/03/Vue/" class="archive-article-date">
-        <time datetime="2020-12-03T14:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
+<a href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+        <time datetime="2020-12-08T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
 </a>
 
   
@@ -221,92 +221,270 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h5 id="Class与Style绑定"><a href="#Class与Style绑定" class="headerlink" title="Class与Style绑定"></a>Class与Style绑定</h5><h6 id="绑定HTML-Class"><a href="#绑定HTML-Class" class="headerlink" title="绑定HTML Class"></a>绑定HTML Class</h6><p>单值绑定</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;&#123;active:isActive&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">    isActive:true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>数据对象绑定法</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;classObject&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">	classObject:&#123;</span><br><span class="line">	isActive: true,</span><br><span class="line">	&#39;text-danger&#39;:false</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+    <h3 id="一、ORDER-BY"><a href="#一、ORDER-BY" class="headerlink" title="一、ORDER BY"></a>一、ORDER BY</h3><p>根据指定列对数据进行分组</p>
+<p>现有表格： carinfo</p>
+<table>
+<thead>
+<tr>
+<th>status</th>
+<th>number</th>
+<th>spend</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>正在车场</td>
+<td>粤BS8120</td>
+<td>10</td>
+</tr>
+<tr>
+<td>已出车场</td>
+<td>粤BS8120</td>
+<td>15</td>
+</tr>
+<tr>
+<td>已出车场</td>
+<td>粤BS8120</td>
+<td>20</td>
+</tr>
+<tr>
+<td>正在车场</td>
+<td>粤BS8121</td>
+<td>25</td>
+</tr>
+<tr>
+<td>已出车场</td>
+<td>粤BS8121</td>
+<td>30</td>
+</tr>
+<tr>
+<td>已出车场</td>
+<td>粤BS8121</td>
+<td>35</td>
+</tr>
+</tbody></table>
 <a id="more"></a>
 
-<p>数组绑定</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">&quot;[activeClass,errorClass]&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="1-查询同辆车进出记录"><a href="#1-查询同辆车进出记录" class="headerlink" title="1.查询同辆车进出记录"></a>1.查询同辆车进出记录</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">number</span> <span class="keyword">as</span> <span class="string">&#x27;车牌号&#x27;</span>,<span class="keyword">count</span>(*) <span class="keyword">as</span> 数量</span><br><span class="line"><span class="keyword">from</span> carinfo</span><br><span class="line"><span class="keyword">Group</span> <span class="keyword">by</span> <span class="built_in">number</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">	activeClass:&#39;active&#39;,</span><br><span class="line">	errorClass:&#39;text-danger&#39;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>车牌号</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>粤BS8120</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粤BS8121</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p>查询carinfo的记录，按照number进行分组。通过聚合函数将记录处理为单值。</p>
+<h4 id="2-查询同辆车的不同状态的进出记录"><a href="#2-查询同辆车的不同状态的进出记录" class="headerlink" title="2.查询同辆车的不同状态的进出记录"></a>2.查询同辆车的不同状态的进出记录</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">number</span> <span class="keyword">as</span> <span class="string">&#x27;车牌号&#x27;</span>,<span class="keyword">status</span> <span class="keyword">as</span> <span class="string">&#x27;状态&#x27;</span>,<span class="keyword">SUM</span>(spend) <span class="keyword">as</span> <span class="string">&#x27;费用&#x27;</span></span><br><span class="line"><span class="keyword">from</span> carinfo</span><br><span class="line"><span class="keyword">Group</span> <span class="keyword">by</span> <span class="built_in">number</span>,<span class="keyword">status</span></span><br></pre></td></tr></table></figure>
 
-<h6 id="组件上的Class"><a href="#组件上的Class" class="headerlink" title="组件上的Class"></a>组件上的Class</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(&#39;my-component&#39;,&#123;</span><br><span class="line">	template:&#39;&lt;p class&#x3D;&quot;foo bar&quot;&gt;Hi&lt;&#x2F;p&gt;&#39;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>车牌号</th>
+<th>状态</th>
+<th>费用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>粤BS8120</td>
+<td>正在车场</td>
+<td>10</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粤BS8120</td>
+<td>已出车场</td>
+<td>35</td>
+</tr>
+<tr>
+<td>3</td>
+<td>粤BS8121</td>
+<td>正在车场</td>
+<td>25</td>
+</tr>
+<tr>
+<td>4</td>
+<td>粤BS8121</td>
+<td>已出车场</td>
+<td>65</td>
+</tr>
+</tbody></table>
+<p>先按number分为粤BS8120、粤BS8121两组，再按staus分组。</p>
+<h3 id="二、GROUP-BY-ALL"><a href="#二、GROUP-BY-ALL" class="headerlink" title="二、GROUP BY ALL"></a>二、GROUP BY ALL</h3><p>当存在where条件，group by all表示依然显示被where过滤的数据。但是其他通过聚会函数统计的数据，都会是null。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">number</span> <span class="keyword">as</span> <span class="string">&#x27;车牌号&#x27;</span>,<span class="keyword">status</span> <span class="keyword">as</span> <span class="string">&#x27;状态&#x27;</span>,<span class="keyword">SUM</span>(spend) <span class="keyword">as</span> <span class="string">&#x27;费用&#x27;</span></span><br><span class="line"><span class="keyword">from</span> carinfo</span><br><span class="line"><span class="keyword">where</span> <span class="built_in">number</span> = <span class="string">&#x27;粤BS8121&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">all</span> <span class="built_in">number</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-conponent</span> <span class="attr">class</span>=<span class="string">&quot;boo baz&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">my-conponent</span>&gt;</span></span><br><span class="line">将会渲染成</span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;foo bar boo baz&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>车牌号</th>
+<th>状态</th>
+<th>费用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>粤BS8120</td>
+<td>正在车场</td>
+<td>null</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粤BS8120</td>
+<td>已出车场</td>
+<td>null</td>
+</tr>
+<tr>
+<td>3</td>
+<td>粤BS8121</td>
+<td>正在车场</td>
+<td>25</td>
+</tr>
+<tr>
+<td>4</td>
+<td>粤BS8121</td>
+<td>已出车场</td>
+<td>65</td>
+</tr>
+</tbody></table>
+<h3 id="三、GROUP-BY-WITH-CUBE"><a href="#三、GROUP-BY-WITH-CUBE" class="headerlink" title="三、GROUP BY WITH CUBE"></a>三、GROUP BY WITH CUBE</h3><p>在group by分组的结果集基础上，进行归纳。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">number</span> <span class="keyword">as</span> <span class="string">&#x27;车牌号&#x27;</span>,<span class="keyword">COUNT</span>(*) <span class="keyword">as</span> <span class="string">&#x27;数量&#x27;</span></span><br><span class="line"><span class="keyword">from</span> carinfo</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">number</span> <span class="keyword">with</span> <span class="keyword">cube</span></span><br></pre></td></tr></table></figure>
 
-<h6 id="Style对象语法"><a href="#Style对象语法" class="headerlink" title="Style对象语法"></a>Style对象语法</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">&quot;styleObject&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>车牌号</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>粤BS8120</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粤BS8121</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>null</td>
+<td>6</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">number</span> <span class="keyword">as</span> <span class="string">&#x27;车牌号&#x27;</span>,<span class="keyword">COUNT</span>(*) <span class="keyword">as</span> <span class="string">&#x27;数量&#x27;</span></span><br><span class="line"><span class="keyword">from</span> carinfo</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">number</span>,<span class="keyword">status</span> <span class="keyword">with</span> <span class="keyword">cube</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">	styleObject:&#123;</span><br><span class="line">	color:&#39;red&#39;,</span><br><span class="line">	fontSize:&#39;12px&#39;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>车牌号</th>
+<th>状态</th>
+<th>数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>粤BS8120</td>
+<td>已出车场</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粤BS8121</td>
+<td>已出车场</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>NULL</td>
+<td>已出车场</td>
+<td>4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>粤BS8120</td>
+<td>正在车场</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>粤BS8121</td>
+<td>正在车场</td>
+<td>1</td>
+</tr>
+<tr>
+<td>6</td>
+<td>NULL</td>
+<td>正在车场</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>粤BS8120</td>
+<td>NULL</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>粤BS8121</td>
+<td>NULL</td>
+<td>3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>NULL</td>
+<td>NULL</td>
+<td>6</td>
+</tr>
+</tbody></table>
+<p>group by会出现四条数据，1，2，4，5。</p>
+<p>通过车牌号归纳，衍生出3，6。</p>
+<p>通过状态归纳，衍生出7，8</p>
+<p>通过车牌号，状态一起归纳，衍生出9</p>
+<h3 id="四、GROUP-BY、HAVING、WHERE、ORDER-BY"><a href="#四、GROUP-BY、HAVING、WHERE、ORDER-BY" class="headerlink" title="四、GROUP BY、HAVING、WHERE、ORDER BY"></a>四、GROUP BY、HAVING、WHERE、ORDER BY</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> </span><br><span class="line"><span class="built_in">number</span>, <span class="keyword">status</span>, <span class="keyword">COUNT</span>(*) 数量, <span class="keyword">SUM</span>(spend) total</span><br><span class="line"><span class="keyword">from</span> inoutinfo2</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">status</span> = <span class="string">&#x27;已出车场&#x27;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="built_in">number</span>, <span class="keyword">status</span></span><br><span class="line"><span class="keyword">having</span> <span class="keyword">SUM</span>(spend) &gt; <span class="number">20</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> total <span class="keyword">asc</span></span><br></pre></td></tr></table></figure>
 
-<p>数组语法同上 </p>
-<h5 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h5><h6 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-if</span>=<span class="string">&quot;awesome&quot;</span>&gt;</span></span><br><span class="line">    Vue is awesome!</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">    Oh no</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="v-else-if"><a href="#v-else-if" class="headerlink" title="v-else-if"></a>v-else-if</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-if</span>=<span class="string">&quot;type === &#x27;A&#x27;&quot;</span>&gt;</span></span><br><span class="line">  A</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type === &#x27;B&#x27;&quot;</span>&gt;</span></span><br><span class="line">  B</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else-if</span>=<span class="string">&quot;type === &#x27;C&#x27;&quot;</span>&gt;</span></span><br><span class="line">  C</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-else</span>&gt;</span></span><br><span class="line">  Not A/B/C</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="key管理复用元素"><a href="#key管理复用元素" class="headerlink" title="key管理复用元素"></a>key管理复用元素</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-if&#x3D;&quot;loginType &#x3D;&#x3D;&#x3D; &#39;username&#39;&quot;&gt;</span><br><span class="line">  &lt;label&gt;Username&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;input placeholder&#x3D;&quot;Enter your username&quot; key&#x3D;&quot;username-input&quot;&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line">&lt;template v-else&gt;</span><br><span class="line">  &lt;label&gt;Email&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;input placeholder&#x3D;&quot;Enter your email address&quot; key&#x3D;&quot;email-input&quot;&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br></pre></td></tr></table></figure>
-
-<p>指定唯一key值，则不会自动复用。而是重新生成。</p>
-<h6 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">v-show</span>=<span class="string">&quot;ok&quot;</span>&gt;</span>Hello!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>简单的切换元素的display属性</p>
-<h5 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Ul</span> <span class="attr">id</span>=<span class="string">&quot;example-1&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item.message&quot;</span>&gt;</span></span><br><span class="line">    	&#123;&#123;item.message&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var example1 &#x3D; new Vue(&#123;</span><br><span class="line">	el:&#39;#example-1&#39;,</span><br><span class="line">	data:&#123;</span><br><span class="line">	  items: [</span><br><span class="line">		&#123;message: &#39;Foo&#39;&#125;,</span><br><span class="line">		&#123;message: &#39;Bar&#39;&#125;</span><br><span class="line">]</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h6 id="v-for遍历对象"><a href="#v-for遍历对象" class="headerlink" title="v-for遍历对象"></a>v-for遍历对象</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;v-for-object&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;value in object&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123;value&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;(value,name) in object&quot;</span>&gt;</span></span><br><span class="line">    &#123;&#123;name&#125;&#125;:&#123;&#123;value&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">new Vue(&#123;</span><br><span class="line">	el:&#39;#v-for-object&#39;,</span><br><span class="line">	data:&#123;</span><br><span class="line">	  object:&#123;</span><br><span class="line">		title:&#39;how to do lists in Vue&#39;,</span><br><span class="line">		author:&#39;kayson&#39;,</span><br><span class="line">		time:&#39;2020-11-09&#39;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h5 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h5><h6 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;example-2&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;greet&quot;</span>&gt;</span></span><br><span class="line">        Greet</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;example-3&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click</span>=<span class="string">&quot;say(&#x27;hi&#x27;)&quot;</span>&gt;</span></span><br><span class="line">        Say hi</span><br><span class="line">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var example2 &#x3D; new Vue(&#123;</span><br><span class="line">	el:&#39;#example-2&#39;,</span><br><span class="line">	data:&#123;</span><br><span class="line">	  name:&#39;Vue.js&#39;</span><br><span class="line">&#125;,</span><br><span class="line">	methods:&#123;</span><br><span class="line">	  greet: function(event)&#123;</span><br><span class="line">	  	alert(&#39;Hello &#39;+this.name)</span><br><span class="line">		if(event)&#123;</span><br><span class="line">			alert(event.target.tagName)</span><br><span class="line">&#125;</span><br><span class="line">&#125;,</span><br><span class="line">	  say: function(message)&#123;</span><br><span class="line">		alert(message)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h6 id="事件修饰符"><a href="#事件修饰符" class="headerlink" title="事件修饰符"></a>事件修饰符</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 阻止单击事件继续传播 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop</span>=<span class="string">&quot;doThis&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 提交事件不再重载页面 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>=<span class="string">&quot;onSubmit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 修饰符可以串联 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click.stop.prevent</span>=<span class="string">&quot;doThat&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 只有修饰符 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">v-on:submit.prevent</span>&gt;</span><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 添加事件监听器时使用事件捕获模式 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.capture</span>=<span class="string">&quot;doThis&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 只当在 event.target 是当前元素自身时触发处理函数 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 即事件不是从内部元素触发的 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-on:click.self</span>=<span class="string">&quot;doThat&quot;</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h6 id="按键修饰符"><a href="#按键修饰符" class="headerlink" title="按键修饰符"></a>按键修饰符</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-on:keyup.enter</span>=<span class="string">&quot;submit&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 即使 Alt 或 Shift 被一同按下时也会触发 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click.ctrl</span>=<span class="string">&quot;onClick&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 有且只有 Ctrl 被按下的时候才触发 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">v-on:click.ctrl.exact</span>=<span class="string">&quot;onCtrlClick&quot;</span>&gt;</span>A<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"></span><br><span class="line">.exact 修饰符允许你控制由精确的系统修饰符组合触发的事件。</span><br><span class="line">//如下按键信息</span><br><span class="line">.enter</span><br><span class="line">.tab</span><br><span class="line">.delete (捕获“删除”和“退格”键)</span><br><span class="line">.esc</span><br><span class="line">.space</span><br><span class="line">.up</span><br><span class="line">.down</span><br><span class="line">.left</span><br><span class="line">.right</span><br><span class="line">.ctrl</span><br><span class="line">.alt</span><br><span class="line">.shift</span><br><span class="line">.meta</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h5><p>文本</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">v-model</span>=<span class="string">&quot;message&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;edit me&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Message is: &#123;&#123; message &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>复选框</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;examplecheckbox&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">id</span>=<span class="string">&quot;jack&quot;</span> <span class="attr">value</span>=<span class="string">&quot;jack&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;checkedNames&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;jack&quot;</span>&gt;</span>Jack<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">id</span>=<span class="string">&quot;chen&quot;</span> <span class="attr">value</span>=<span class="string">&quot;chen&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;checkedNames&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;chen&quot;</span>&gt;</span>chen<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;checkedNames&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> examplecheckbox = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">&#x27;#examplecheckbox&#x27;</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        checkedNames:[]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>单选框</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;exampleradio&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">id</span>=<span class="string">&quot;one&quot;</span> <span class="attr">value</span>=<span class="string">&quot;One&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;picked&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;one&quot;</span>&gt;</span>One<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">id</span>=<span class="string">&quot;two&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Two&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;picked&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;two&quot;</span>&gt;</span>Two<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;&#123;picked&#125;&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> exampleradio = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">&quot;#exampleradio&quot;</span>,</span><br><span class="line">    data:&#123;</span><br><span class="line">        picked:<span class="string">&#x27;&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h5 id="插槽"><a href="#插槽" class="headerlink" title="插槽"></a>插槽</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;blog-post&#x27;</span>,&#123;</span><br><span class="line">			props:[<span class="string">&#x27;title&#x27;</span>],</span><br><span class="line">			template:<span class="string">&#x27;&lt;slot&gt;&lt;/slot&gt;&#x27;</span></span><br><span class="line">		&#125;)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;blog-post-demo&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">blog-post</span> <span class="attr">title</span>=<span class="string">&quot;My journey with Vue&quot;</span>&gt;</span>插槽<span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span>	</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>若无插槽，自定义组件内无法写内容</li>
-<li><slot>后备内容</slot>,当自定义组件显示内容为空，启用后备内容。</li>
-</ol>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base-layout</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">template</span>	<span class="attr">slot</span>=<span class="string">&quot;header&quot;</span>&gt;</span> </span><br><span class="line">		<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Here	might	be	a	page	title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>			</span><br><span class="line">	<span class="tag">&lt;/<span class="name">template</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">base-layout</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>将渲染为</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base-layout</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">h1</span>	<span class="attr">slot</span>=<span class="string">&quot;header&quot;</span>&gt;</span>Here	might	be	a	page	title<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">base-layout</span>&gt;</span> </span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h5><p>全局注册</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;component-a&#x27;</span>,&#123;</span><br><span class="line">	<span class="string">&#x27;&lt;h1&gt;&lt;/h1&gt;&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>局部注册</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ComponentA = &#123;<span class="string">&#x27;&lt;h1&gt;&lt;/h1&gt;&#x27;</span>&#125;</span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el:<span class="string">&#x27;#app&#x27;</span>,</span><br><span class="line">    components:&#123;</span><br><span class="line">        <span class="string">&#x27;component-a&#x27;</span>:ComponentA</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
+<table>
+<thead>
+<tr>
+<th></th>
+<th>number</th>
+<th>status</th>
+<th>数量</th>
+<th>total</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>粤BS8120</td>
+<td>已出车场</td>
+<td>2</td>
+<td>35</td>
+</tr>
+<tr>
+<td>2</td>
+<td>粤BS8121</td>
+<td>已出车场</td>
+<td>2</td>
+<td>65</td>
+</tr>
+</tbody></table>
+<p>having为分组后的筛选</p>
 
     
 
@@ -321,7 +499,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/2020/12/03/Vue/" title="Vue基础语法" target="_blank">http://example.com/2020/12/03/Vue/</a>
+          <a href="http://example.com/2020/12/08/6sql-分组使用/" title="sql 分组使用" target="_blank">http://example.com/2020/12/08/6sql-分组使用/</a>
         </li>
         
         <li>
@@ -343,7 +521,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
         		</li>
       		
 		</ul>
@@ -399,7 +577,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/03/Vue/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -414,18 +592,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/12/05/Collection/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/12/08/7sql-%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Collections基础使用
+          sql函数
         
       </div>
     </a>
   
   
-    <a href="/2020/12/03/Spring%20Boot%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Spring Boot 简单实例</div>
+    <a href="/2020/12/07/5sql-left%20join/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql中join连接</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -452,7 +630,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#Class%E4%B8%8EStyle%E7%BB%91%E5%AE%9A"><span class="toc-number">1.</span> <span class="toc-text">Class与Style绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BB%91%E5%AE%9AHTML-Class"><span class="toc-number">1.1.</span> <span class="toc-text">绑定HTML Class</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6%E4%B8%8A%E7%9A%84Class"><span class="toc-number">1.2.</span> <span class="toc-text">组件上的Class</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Style%E5%AF%B9%E8%B1%A1%E8%AF%AD%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">Style对象语法</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%B8%B2%E6%9F%93"><span class="toc-number">2.</span> <span class="toc-text">条件渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#v-if"><span class="toc-number">2.1.</span> <span class="toc-text">v-if</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#v-else-if"><span class="toc-number">2.2.</span> <span class="toc-text">v-else-if</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#key%E7%AE%A1%E7%90%86%E5%A4%8D%E7%94%A8%E5%85%83%E7%B4%A0"><span class="toc-number">2.3.</span> <span class="toc-text">key管理复用元素</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#v-show"><span class="toc-number">2.4.</span> <span class="toc-text">v-show</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%97%E8%A1%A8%E6%B8%B2%E6%9F%93"><span class="toc-number">3.</span> <span class="toc-text">列表渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#v-for%E9%81%8D%E5%8E%86%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.1.</span> <span class="toc-text">v-for遍历对象</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text">事件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text">监听事件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">4.2.</span> <span class="toc-text">事件修饰符</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">4.3.</span> <span class="toc-text">按键修饰符</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E8%BE%93%E5%85%A5%E7%BB%91%E5%AE%9A"><span class="toc-number">5.</span> <span class="toc-text">表单输入绑定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8F%92%E6%A7%BD"><span class="toc-number">6.</span> <span class="toc-text">插槽</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">组件</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81ORDER-BY"><span class="toc-number">1.</span> <span class="toc-text">一、ORDER BY</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%9F%A5%E8%AF%A2%E5%90%8C%E8%BE%86%E8%BD%A6%E8%BF%9B%E5%87%BA%E8%AE%B0%E5%BD%95"><span class="toc-number">1.1.</span> <span class="toc-text">1.查询同辆车进出记录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%9F%A5%E8%AF%A2%E5%90%8C%E8%BE%86%E8%BD%A6%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8A%B6%E6%80%81%E7%9A%84%E8%BF%9B%E5%87%BA%E8%AE%B0%E5%BD%95"><span class="toc-number">1.2.</span> <span class="toc-text">2.查询同辆车的不同状态的进出记录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81GROUP-BY-ALL"><span class="toc-number">2.</span> <span class="toc-text">二、GROUP BY ALL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81GROUP-BY-WITH-CUBE"><span class="toc-number">3.</span> <span class="toc-text">三、GROUP BY WITH CUBE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81GROUP-BY%E3%80%81HAVING%E3%80%81WHERE%E3%80%81ORDER-BY"><span class="toc-number">4.</span> <span class="toc-text">四、GROUP BY、HAVING、WHERE、ORDER BY</span></a></li></ol>
                     </div>
                 </span>
             </div>

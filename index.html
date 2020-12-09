@@ -194,7 +194,7 @@
             
 
   
-    <article id="post-sql-分组使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-8sql-索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -202,7 +202,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/12/08/sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" target="_blank">sql 分组使用</a>
+	  <a class="article-title" href="/2020/12/09/8sql-%E7%B4%A2%E5%BC%95/" target="_blank">sql索引</a>
   
     </h1>
   
@@ -210,7 +210,290 @@
 
   
   
-<a href="/2020/12/08/sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+<a href="/2020/12/09/8sql-%E7%B4%A2%E5%BC%95/" class="archive-article-date">
+        <time datetime="2020-12-09T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-09</time>
+</a>
+
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h3><p>像书的目录，根据目录找到对应的内容页。平衡树常作为数据表默认的索引数据结构。加了主键的表，存储结构会转换成树状结构，方便查询。</p>
+<h4 id="聚集索引（clustered-index）"><a href="#聚集索引（clustered-index）" class="headerlink" title="聚集索引（clustered index）"></a>聚集索引（clustered index）</h4><p>数据行的物理顺序与列值（一般是主键的那一列）的逻辑顺序相同</p>
+<h5 id="主键即为聚集索引"><a href="#主键即为聚集索引" class="headerlink" title="主键即为聚集索引"></a>主键即为聚集索引</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> carinfo &#123;</span><br><span class="line">		<span class="keyword">id</span> <span class="built_in">int</span> primary <span class="keyword">key</span>,</span><br><span class="line">		<span class="keyword">name</span> <span class="built_in">varchar</span>(<span class="number">255</span>),</span><br><span class="line">		age <span class="built_in">int</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2020/12/09/8sql-%E7%B4%A2%E5%BC%95/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/12/09/8sql-%E7%B4%A2%E5%BC%95/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-7sql-函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/12/08/7sql-%E5%87%BD%E6%95%B0/" target="_blank">sql函数</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/12/08/7sql-%E5%87%BD%E6%95%B0/" class="archive-article-date">
+        <time datetime="2020-12-08T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
+</a>
+
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="合计函数、Scalar函数：返回单一值"><a href="#合计函数、Scalar函数：返回单一值" class="headerlink" title="合计函数、Scalar函数：返回单一值"></a>合计函数、Scalar函数：返回单一值</h3><h4 id="1-AVG-返回平均值"><a href="#1-AVG-返回平均值" class="headerlink" title="1.AVG() 返回平均值"></a>1.AVG() 返回平均值</h4><table>
+<thead>
+<tr>
+<th align="left">O_Id</th>
+<th align="left">OrderDate</th>
+<th align="left">OrderPrice</th>
+<th align="left">Customer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">2008/12/29</td>
+<td align="left">1000</td>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">2008/11/23</td>
+<td align="left">1600</td>
+<td align="left">Carter</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">2008/10/05</td>
+<td align="left">700</td>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">2008/09/28</td>
+<td align="left">300</td>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">2008/08/06</td>
+<td align="left">2000</td>
+<td align="left">Adams</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">2008/07/21</td>
+<td align="left">100</td>
+<td align="left">Carter</td>
+</tr>
+</tbody></table>
+<p>1.求OrderPrice平均值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(OrderPrice) <span class="keyword">AS</span> OrderAverage <span class="keyword">FROM</span> Orders</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">OrderAverage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">950</td>
+</tr>
+</tbody></table>
+<p>2.找到OrderPrice值高于OrderPrice平均值的客户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> customer <span class="keyword">from</span> Orders</span><br><span class="line"><span class="keyword">where</span> OrderPrice &gt; (<span class="keyword">select</span> <span class="keyword">AVG</span>(OrderPrice) <span class="keyword">from</span> Orders)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Customer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">Carter</td>
+</tr>
+<tr>
+<td align="left">Adams</td>
+</tr>
+</tbody></table>
+<h4 id="2-COUNT-返回记录数"><a href="#2-COUNT-返回记录数" class="headerlink" title="2.COUNT() 返回记录数"></a>2.COUNT() 返回记录数</h4><p>1.返回表中记录条数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">COUNT</span>(*) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<p>2.计算客户”Carter”的订单数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">COUNT</span>(Customer) <span class="keyword">as</span> <span class="string">&#x27;Carter订单数&#x27;</span></span><br><span class="line"><span class="keyword">from</span> Orders</span><br><span class="line"><span class="keyword">where</span> Customer = <span class="string">&#x27;Carter&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>Carter订单数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+</tr>
+</tbody></table>
+<h4 id="3-MAX-返回列中最大值"><a href="#3-MAX-返回列中最大值" class="headerlink" title="3.MAX() 返回列中最大值"></a>3.MAX() 返回列中最大值</h4><p>1.查找OrderPrice的最大值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(OrderPrice) <span class="keyword">form</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-SUM-返回列总值"><a href="#4-SUM-返回列总值" class="headerlink" title="4.SUM() 返回列总值"></a>4.SUM() 返回列总值</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">SUM</span>(OrderPrice) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-UCASE-字段值转换为大写"><a href="#5-UCASE-字段值转换为大写" class="headerlink" title="5.UCASE()字段值转换为大写"></a>5.UCASE()字段值转换为大写</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ucase</span>(Customer) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-LCASE-字段值转换为小写"><a href="#6-LCASE-字段值转换为小写" class="headerlink" title="6.LCASE()字段值转换为小写"></a>6.LCASE()字段值转换为小写</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">lcase</span>(Customer) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-MID-用于文本字段中提取字符"><a href="#7-MID-用于文本字段中提取字符" class="headerlink" title="7.MID()用于文本字段中提取字符"></a>7.MID()用于文本字段中提取字符</h4><p>提取CITY的前三个字符。 参数含义(colum,start,length)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">MID</span>(City,<span class="number">1</span>,<span class="number">3</span>) <span class="keyword">form</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-ROUND-把数值字段舍入为指定的小数位数"><a href="#8-ROUND-把数值字段舍入为指定的小数位数" class="headerlink" title="8.ROUND()把数值字段舍入为指定的小数位数"></a>8.ROUND()把数值字段舍入为指定的小数位数</h4><p>参数(列名，小数位数)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ROUND</span>(column_name,decimals) <span class="keyword">from</span> table_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-NOW-返回当前时间"><a href="#9-NOW-返回当前时间" class="headerlink" title="9.NOW()返回当前时间"></a>9.NOW()返回当前时间</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">NOW</span>() <span class="keyword">from</span> table_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-FORMAT-用于对字段的显示进行格式化"><a href="#10-FORMAT-用于对字段的显示进行格式化" class="headerlink" title="10.FORMAT()用于对字段的显示进行格式化"></a>10.FORMAT()用于对字段的显示进行格式化</h4><p>显示格式为年月日的日期</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">FORMAT</span>(<span class="keyword">NOW</span>(),<span class="string">&#x27;YYYY-MM-DD&#x27;</span>) <span class="keyword">as</span> <span class="string">&#x27;年月日&#x27;</span></span><br><span class="line"><span class="keyword">from</span> table_name</span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/12/08/7sql-%E5%87%BD%E6%95%B0/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-6sql-分组使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" target="_blank">sql 分组使用</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
         <time datetime="2020-12-08T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
 </a>
 
@@ -262,7 +545,7 @@
 </tr>
 </tbody></table>
     
-    <a class="article-more-a" href="/2020/12/08/sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/#more">more >></a>
+    <a class="article-more-a" href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/#more">more >></a>
     
     
 
@@ -289,7 +572,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/12/08/sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
     </p>
     
 
@@ -319,7 +602,7 @@
 
 
   
-    <article id="post-sql-left join" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-5sql-left join" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -327,7 +610,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/12/07/sql-left%20join/" target="_blank">sql中join连接</a>
+	  <a class="article-title" href="/2020/12/07/5sql-left%20join/" target="_blank">sql中join连接</a>
   
     </h1>
   
@@ -335,7 +618,7 @@
 
   
   
-<a href="/2020/12/07/sql-left%20join/" class="archive-article-date">
+<a href="/2020/12/07/5sql-left%20join/" class="archive-article-date">
         <time datetime="2020-12-07T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-07</time>
 </a>
 
@@ -378,7 +661,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/12/07/sql-left%20join/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/12/07/5sql-left%20join/">展开全文 >></a>
     </p>
     
 
@@ -408,7 +691,7 @@
 
 
   
-    <article id="post-Thymeleaf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-4Thymeleaf" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -416,7 +699,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/12/05/Thymeleaf/" target="_blank">Thymeleaf基本语法</a>
+	  <a class="article-title" href="/2020/12/05/4Thymeleaf/" target="_blank">Thymeleaf基本语法</a>
   
     </h1>
   
@@ -424,7 +707,7 @@
 
   
   
-<a href="/2020/12/05/Thymeleaf/" class="archive-article-date">
+<a href="/2020/12/05/4Thymeleaf/" class="archive-article-date">
         <time datetime="2020-12-05T04:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
 </a>
 
@@ -445,7 +728,7 @@
 
 <h4 id="第一步：pom-xml中添加依赖"><a href="#第一步：pom-xml中添加依赖" class="headerlink" title="第一步：pom.xml中添加依赖"></a>第一步：pom.xml中添加依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 继承父包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.0.7.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- web启动jar --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.projectlombok<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>lombok<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.18.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>provided<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-thymeleaf<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2020/12/05/Thymeleaf/#more">more >></a>
+    <a class="article-more-a" href="/2020/12/05/4Thymeleaf/#more">more >></a>
     
     
 
@@ -472,7 +755,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/12/05/Thymeleaf/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/12/05/4Thymeleaf/">展开全文 >></a>
     </p>
     
 
@@ -502,7 +785,7 @@
 
 
   
-    <article id="post-Collection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-1Collection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -510,7 +793,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/12/05/Collection/" target="_blank">Collections基础使用</a>
+	  <a class="article-title" href="/2020/12/05/1Collection/" target="_blank">Collections基础使用</a>
   
     </h1>
   
@@ -518,7 +801,7 @@
 
   
   
-<a href="/2020/12/05/Collection/" class="archive-article-date">
+<a href="/2020/12/05/1Collection/" class="archive-article-date">
         <time datetime="2020-12-05T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
 </a>
 
@@ -534,7 +817,7 @@
 <p>ArrayList长度不受限制实现：当不够用，则将本数组拷贝到另外一个新数组，新数组的长度为：原数组长度+原数组长度的一半</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">List&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();<span class="comment">//两种写法都可以，因为List继承了Collection</span></span><br><span class="line">		System.out.println(c.size()); <span class="comment">//集合长度</span></span><br><span class="line">		System.out.println(c.isEmpty()); <span class="comment">//集合是否为空</span></span><br><span class="line">		c.add(<span class="string">&quot;CHINA&quot;</span>); <span class="comment">//集合中添加元素</span></span><br><span class="line">		c.add(<span class="string">&quot;Englend&quot;</span>);</span><br><span class="line">		c.add(<span class="string">&quot;c&quot;</span>);</span><br><span class="line">		c.add(<span class="string">&quot;d&quot;</span>);</span><br><span class="line">	<span class="comment">//	c.remove(&quot;Englend&quot;); //删除元素</span></span><br><span class="line">	<span class="comment">//	c.clear(); //清空所有元素</span></span><br><span class="line">		c.toArray();<span class="comment">//转换为数组</span></span><br><span class="line">		c.add(<span class="number">2</span>,<span class="string">&quot;巧碧螺&quot;</span>);<span class="comment">//在索引为2的位置插入</span></span><br><span class="line">		c.set(<span class="number">2</span>,<span class="string">&quot;巧碧螺&quot;</span>);<span class="comment">//将索引为2的元素替换</span></span><br><span class="line">		System.out.println(list.indexOf(<span class="string">&quot;d&quot;</span>));<span class="comment">//从头开始找，元素的索引</span></span><br><span class="line">		System.out.println(c.contains(<span class="string">&quot;CHINA&quot;</span>)); <span class="comment">//是否包含某个对象</span></span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2020/12/05/Collection/#more">more >></a>
+    <a class="article-more-a" href="/2020/12/05/1Collection/#more">more >></a>
     
     
 
@@ -561,7 +844,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/12/05/Collection/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/12/05/1Collection/">展开全文 >></a>
     </p>
     
 
@@ -591,7 +874,7 @@
 
 
   
-    <article id="post-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-3Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -599,7 +882,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/12/03/Vue/" target="_blank">Vue基础语法</a>
+	  <a class="article-title" href="/2020/12/03/3Vue/" target="_blank">Vue基础语法</a>
   
     </h1>
   
@@ -607,7 +890,7 @@
 
   
   
-<a href="/2020/12/03/Vue/" class="archive-article-date">
+<a href="/2020/12/03/3Vue/" class="archive-article-date">
         <time datetime="2020-12-03T14:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
 </a>
 
@@ -627,7 +910,7 @@
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">data:&#123;</span><br><span class="line">	classObject:&#123;</span><br><span class="line">	isActive: true,</span><br><span class="line">	&#39;text-danger&#39;:false</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
-    <a class="article-more-a" href="/2020/12/03/Vue/#more">more >></a>
+    <a class="article-more-a" href="/2020/12/03/3Vue/#more">more >></a>
     
     
 
@@ -654,7 +937,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/12/03/Vue/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/12/03/3Vue/">展开全文 >></a>
     </p>
     
 
@@ -684,7 +967,7 @@
 
 
   
-    <article id="post-Spring Boot笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-2Spring Boot笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -692,7 +975,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/12/03/Spring%20Boot%E7%AC%94%E8%AE%B0/" target="_blank">Spring Boot 简单实例</a>
+	  <a class="article-title" href="/2020/12/03/2Spring%20Boot%E7%AC%94%E8%AE%B0/" target="_blank">Spring Boot 简单实例</a>
   
     </h1>
   
@@ -700,7 +983,7 @@
 
   
   
-<a href="/2020/12/03/Spring%20Boot%E7%AC%94%E8%AE%B0/" class="archive-article-date">
+<a href="/2020/12/03/2Spring%20Boot%E7%AC%94%E8%AE%B0/" class="archive-article-date">
         <time datetime="2020-12-03T13:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
 </a>
 
@@ -721,7 +1004,7 @@
 <p>4、不需要配置 JSON 解析，支持 REST 架构</p>
 <p>5、个性化配置非常简单
     
-    <a class="article-more-a" href="/2020/12/03/Spring%20Boot%E7%AC%94%E8%AE%B0/#more">more >></a>
+    <a class="article-more-a" href="/2020/12/03/2Spring%20Boot%E7%AC%94%E8%AE%B0/#more">more >></a>
     
     
 
@@ -748,7 +1031,7 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/12/03/Spring%20Boot%E7%AC%94%E8%AE%B0/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/12/03/2Spring%20Boot%E7%AC%94%E8%AE%B0/">展开全文 >></a>
     </p>
     
 

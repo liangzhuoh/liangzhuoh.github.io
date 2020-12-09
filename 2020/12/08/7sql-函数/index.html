@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Kayson Zom</title>
+  <title>sql函数 | Kayson Zom</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Kayson Zom">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="合计函数、Scalar函数：返回单一值1.AVG() 返回平均值   O_Id OrderDate OrderPrice Customer    1 2008&#x2F;12&#x2F;29 1000 Bush   2 2008&#x2F;11&#x2F;23 1600 Carter   3 2008&#x2F;10&#x2F;05 700 Bush   4 2008&#x2F;09&#x2F;28 300 Bush   5 2008&#x2F;08&#x2F;06 2000 Adams   6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="sql函数">
+<meta property="og:url" content="http://example.com/2020/12/08/7sql-%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="Kayson Zom">
+<meta property="og:description" content="合计函数、Scalar函数：返回单一值1.AVG() 返回平均值   O_Id OrderDate OrderPrice Customer    1 2008&#x2F;12&#x2F;29 1000 Bush   2 2008&#x2F;11&#x2F;23 1600 Carter   3 2008&#x2F;10&#x2F;05 700 Bush   4 2008&#x2F;09&#x2F;28 300 Bush   5 2008&#x2F;08&#x2F;06 2000 Adams   6">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-12-08T13:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-08T08:41:38.464Z">
 <meta property="article:author" content="Kayson Liang">
+<meta property="article:tag" content="sql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Kayson Zom" type="application/atom+xml">
@@ -187,84 +192,180 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-7sql-函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/12/09/8sql-%E7%B4%A2%E5%BC%95/" class="archive-article-date">
-        <time datetime="2020-12-09T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-09</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/09/8sql-%E7%B4%A2%E5%BC%95/" target="_blank">sql索引</a>
   
+    <h1 class="article-title" itemprop="name">
+      sql函数
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/12/08/7sql-%E5%87%BD%E6%95%B0/" class="archive-article-date">
         <time datetime="2020-12-08T13:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/08/7sql-%E5%87%BD%E6%95%B0/" target="_blank">sql函数</a>
   
-    </h1>
+  </header>
   
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="合计函数、Scalar函数：返回单一值"><a href="#合计函数、Scalar函数：返回单一值" class="headerlink" title="合计函数、Scalar函数：返回单一值"></a>合计函数、Scalar函数：返回单一值</h3><h4 id="1-AVG-返回平均值"><a href="#1-AVG-返回平均值" class="headerlink" title="1.AVG() 返回平均值"></a>1.AVG() 返回平均值</h4><table>
+<thead>
+<tr>
+<th align="left">O_Id</th>
+<th align="left">OrderDate</th>
+<th align="left">OrderPrice</th>
+<th align="left">Customer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1</td>
+<td align="left">2008/12/29</td>
+<td align="left">1000</td>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">2008/11/23</td>
+<td align="left">1600</td>
+<td align="left">Carter</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">2008/10/05</td>
+<td align="left">700</td>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">2008/09/28</td>
+<td align="left">300</td>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">2008/08/06</td>
+<td align="left">2000</td>
+<td align="left">Adams</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">2008/07/21</td>
+<td align="left">100</td>
+<td align="left">Carter</td>
+</tr>
+</tbody></table>
+<p>1.求OrderPrice平均值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(OrderPrice) <span class="keyword">AS</span> OrderAverage <span class="keyword">FROM</span> Orders</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">OrderAverage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">950</td>
+</tr>
+</tbody></table>
+<p>2.找到OrderPrice值高于OrderPrice平均值的客户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> customer <span class="keyword">from</span> Orders</span><br><span class="line"><span class="keyword">where</span> OrderPrice &gt; (<span class="keyword">select</span> <span class="keyword">AVG</span>(OrderPrice) <span class="keyword">from</span> Orders)</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Customer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Bush</td>
+</tr>
+<tr>
+<td align="left">Carter</td>
+</tr>
+<tr>
+<td align="left">Adams</td>
+</tr>
+</tbody></table>
+<h4 id="2-COUNT-返回记录数"><a href="#2-COUNT-返回记录数" class="headerlink" title="2.COUNT() 返回记录数"></a>2.COUNT() 返回记录数</h4><p>1.返回表中记录条数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">COUNT</span>(*) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<p>2.计算客户”Carter”的订单数</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">COUNT</span>(Customer) <span class="keyword">as</span> <span class="string">&#x27;Carter订单数&#x27;</span></span><br><span class="line"><span class="keyword">from</span> Orders</span><br><span class="line"><span class="keyword">where</span> Customer = <span class="string">&#x27;Carter&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>Carter订单数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+</tr>
+</tbody></table>
+<h4 id="3-MAX-返回列中最大值"><a href="#3-MAX-返回列中最大值" class="headerlink" title="3.MAX() 返回列中最大值"></a>3.MAX() 返回列中最大值</h4><p>1.查找OrderPrice的最大值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">MAX</span>(OrderPrice) <span class="keyword">form</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-SUM-返回列总值"><a href="#4-SUM-返回列总值" class="headerlink" title="4.SUM() 返回列总值"></a>4.SUM() 返回列总值</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">SUM</span>(OrderPrice) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-UCASE-字段值转换为大写"><a href="#5-UCASE-字段值转换为大写" class="headerlink" title="5.UCASE()字段值转换为大写"></a>5.UCASE()字段值转换为大写</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ucase</span>(Customer) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-LCASE-字段值转换为小写"><a href="#6-LCASE-字段值转换为小写" class="headerlink" title="6.LCASE()字段值转换为小写"></a>6.LCASE()字段值转换为小写</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">lcase</span>(Customer) <span class="keyword">from</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-MID-用于文本字段中提取字符"><a href="#7-MID-用于文本字段中提取字符" class="headerlink" title="7.MID()用于文本字段中提取字符"></a>7.MID()用于文本字段中提取字符</h4><p>提取CITY的前三个字符。 参数含义(colum,start,length)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">MID</span>(City,<span class="number">1</span>,<span class="number">3</span>) <span class="keyword">form</span> Orders</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-ROUND-把数值字段舍入为指定的小数位数"><a href="#8-ROUND-把数值字段舍入为指定的小数位数" class="headerlink" title="8.ROUND()把数值字段舍入为指定的小数位数"></a>8.ROUND()把数值字段舍入为指定的小数位数</h4><p>参数(列名，小数位数)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">ROUND</span>(column_name,decimals) <span class="keyword">from</span> table_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-NOW-返回当前时间"><a href="#9-NOW-返回当前时间" class="headerlink" title="9.NOW()返回当前时间"></a>9.NOW()返回当前时间</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">NOW</span>() <span class="keyword">from</span> table_name</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-FORMAT-用于对字段的显示进行格式化"><a href="#10-FORMAT-用于对字段的显示进行格式化" class="headerlink" title="10.FORMAT()用于对字段的显示进行格式化"></a>10.FORMAT()用于对字段的显示进行格式化</h4><p>显示格式为年月日的日期</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">FORMAT</span>(<span class="keyword">NOW</span>(),<span class="string">&#x27;YYYY-MM-DD&#x27;</span>) <span class="keyword">as</span> <span class="string">&#x27;年月日&#x27;</span></span><br><span class="line"><span class="keyword">from</span> table_name</span><br></pre></td></tr></table></figure>
 
 
-        <div class="article-info info-on-right">
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Kayson Liang
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2020/12/08/7sql-函数/" title="sql函数" target="_blank">http://example.com/2020/12/08/7sql-函数/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -276,277 +377,129 @@
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/12/08/7sql-%E5%87%BD%E6%95%B0/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-        <time datetime="2020-12-08T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2020/12/09/8sql-%E7%B4%A2%E5%BC%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          sql索引
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql 分组使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/08/6sql-%E5%88%86%E7%BB%84%E4%BD%BF%E7%94%A8/" target="_blank">sql 分组使用</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E8%AE%A1%E5%87%BD%E6%95%B0%E3%80%81Scalar%E5%87%BD%E6%95%B0%EF%BC%9A%E8%BF%94%E5%9B%9E%E5%8D%95%E4%B8%80%E5%80%BC"><span class="toc-number">1.</span> <span class="toc-text">合计函数、Scalar函数：返回单一值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-AVG-%E8%BF%94%E5%9B%9E%E5%B9%B3%E5%9D%87%E5%80%BC"><span class="toc-number">1.1.</span> <span class="toc-text">1.AVG() 返回平均值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-COUNT-%E8%BF%94%E5%9B%9E%E8%AE%B0%E5%BD%95%E6%95%B0"><span class="toc-number">1.2.</span> <span class="toc-text">2.COUNT() 返回记录数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-MAX-%E8%BF%94%E5%9B%9E%E5%88%97%E4%B8%AD%E6%9C%80%E5%A4%A7%E5%80%BC"><span class="toc-number">1.3.</span> <span class="toc-text">3.MAX() 返回列中最大值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-SUM-%E8%BF%94%E5%9B%9E%E5%88%97%E6%80%BB%E5%80%BC"><span class="toc-number">1.4.</span> <span class="toc-text">4.SUM() 返回列总值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-UCASE-%E5%AD%97%E6%AE%B5%E5%80%BC%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%A4%A7%E5%86%99"><span class="toc-number">1.5.</span> <span class="toc-text">5.UCASE()字段值转换为大写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-LCASE-%E5%AD%97%E6%AE%B5%E5%80%BC%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%B0%8F%E5%86%99"><span class="toc-number">1.6.</span> <span class="toc-text">6.LCASE()字段值转换为小写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-MID-%E7%94%A8%E4%BA%8E%E6%96%87%E6%9C%AC%E5%AD%97%E6%AE%B5%E4%B8%AD%E6%8F%90%E5%8F%96%E5%AD%97%E7%AC%A6"><span class="toc-number">1.7.</span> <span class="toc-text">7.MID()用于文本字段中提取字符</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-ROUND-%E6%8A%8A%E6%95%B0%E5%80%BC%E5%AD%97%E6%AE%B5%E8%88%8D%E5%85%A5%E4%B8%BA%E6%8C%87%E5%AE%9A%E7%9A%84%E5%B0%8F%E6%95%B0%E4%BD%8D%E6%95%B0"><span class="toc-number">1.8.</span> <span class="toc-text">8.ROUND()把数值字段舍入为指定的小数位数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-NOW-%E8%BF%94%E5%9B%9E%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4"><span class="toc-number">1.9.</span> <span class="toc-text">9.NOW()返回当前时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-FORMAT-%E7%94%A8%E4%BA%8E%E5%AF%B9%E5%AD%97%E6%AE%B5%E7%9A%84%E6%98%BE%E7%A4%BA%E8%BF%9B%E8%A1%8C%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="toc-number">1.10.</span> <span class="toc-text">10.FORMAT()用于对字段的显示进行格式化</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/12/07/5sql-left%20join/" class="archive-article-date">
-        <time datetime="2020-12-07T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-07</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/07/5sql-left%20join/" target="_blank">sql中join连接</a>
-  
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/12/05/4Thymeleaf/" class="archive-article-date">
-        <time datetime="2020-12-05T04:03:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/05/4Thymeleaf/" target="_blank">Thymeleaf基本语法</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">thymeleaf</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/12/05/1Collection/" class="archive-article-date">
-        <time datetime="2020-12-05T00:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/05/1Collection/" target="_blank">Collections基础使用</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/12/03/3Vue/" class="archive-article-date">
-        <time datetime="2020-12-03T14:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/03/3Vue/" target="_blank">Vue基础语法</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/12/03/2Spring%20Boot%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-        <time datetime="2020-12-03T13:01:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/12/03/2Spring%20Boot%E7%AC%94%E8%AE%B0/" target="_blank">Spring Boot 简单实例</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Spring Boot</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -587,8 +540,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
